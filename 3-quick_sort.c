@@ -6,10 +6,10 @@
  * @size: The size of the array
  * Return: No return
  */
- void quick_sort(int *array, size_t size)
- {
+void quick_sort(int *array, size_t size)
+{
 	_quick(array, size, 0, size - 1);
- }
+}
 /**
  * _quick - Sorts using the Quick sort algorithm
  * @array: Out array to sort
@@ -18,8 +18,8 @@
  * @right: the right side
  * Return: No return
  */
- void _quick(int *array, size_t size, int left, int right)
- {
+void _quick(int *array, size_t size, int left, int right)
+{
 	int i, j, temp;
 
 	if (left < right)
@@ -39,7 +39,7 @@
 				i++;
 			}
 		}
-		if (i != right)
+		if (array[i] != array[right])
 		{
 			temp = array[right];
 			array[right] = array[i];
@@ -49,5 +49,4 @@
 		_quick(array, size, left, i - 1);
 		_quick(array, size, i + 1, right);
 	}
- }
-
+}
