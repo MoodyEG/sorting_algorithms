@@ -39,7 +39,7 @@
 				i++;
 			}
 		}
-		if (array[i] != array[right])
+		if (i != right)
 		{
 			temp = array[right];
 			array[right] = array[i];
