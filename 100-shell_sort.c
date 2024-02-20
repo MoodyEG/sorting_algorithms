@@ -8,8 +8,8 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t gap = 1, i, j;
-	int temp, flag;
+	size_t gap = 0, i, j;
+	int temp;
 
 	if (!array)
 		return;
@@ -17,7 +17,6 @@ void shell_sort(int *array, size_t size)
 		gap = gap * 3 + 1;
 	while (gap > 0)
 	{
-		flag = 0;
 		for (i = gap; i < size; i++)
 		{
 			for (j = i; j > gap - 1 ; j -= gap)
@@ -27,12 +26,10 @@ void shell_sort(int *array, size_t size)
 					temp = array[j];
 					array[j] = array[j - gap];
 					array[j - gap] = temp;
-					flag = 1;
 				}
 			}
 		}
-		if (flag)
-			print_array(array, size);
+		print_array(array, size);
 		gap = (gap - 1) / 3;
 	}
 }
